@@ -111,26 +111,31 @@
             const ce = new CidadesEstados();
             ce.init();
         });
-        document.getElementById("add").addEventListener("click", (event) => {
-            let grupo = document.querySelector(".grupo_estado_cidade");
-            let gruposTotal = document.querySelectorAll(".grupo_estado_cidade").length + 1;
-            let grupoNovo = grupo.cloneNode(true);
-            let estadoObj = grupoNovo.querySelector("[data-estado]");
-            let cidadeObj = grupoNovo.querySelector("[data-cidade]");
+        (function() {
+            const addBtn = document.getElementById("add");
+            if (!addBtn) return;
+            addBtn.addEventListener("click", (event) => {
+                let grupo = document.querySelector(".grupo_estado_cidade");
+                if (!grupo) return;
+                let gruposTotal = document.querySelectorAll(".grupo_estado_cidade").length + 1;
+                let grupoNovo = grupo.cloneNode(true);
+                let estadoObj = grupoNovo.querySelector("[data-estado]");
+                let cidadeObj = grupoNovo.querySelector("[data-cidade]");
 
-            estadoObj.setAttribute("data-estado", "");
-            estadoObj.setAttribute("data-grupo-id", gruposTotal);
+                estadoObj.setAttribute("data-estado", "");
+                estadoObj.setAttribute("data-grupo-id", gruposTotal);
 
-            cidadeObj.setAttribute("data-cidade", "");
-            cidadeObj.setAttribute("data-grupo-id", gruposTotal);
+                cidadeObj.setAttribute("data-cidade", "");
+                cidadeObj.setAttribute("data-grupo-id", gruposTotal);
 
-            while (cidadeObj.firstChild) {
-                cidadeObj.removeChild(cidadeObj.firstChild);
-            }
-            cidadeObj.options[cidadeObj.options.length] = new Option('Selecione uma cidade', '');
+                while (cidadeObj.firstChild) {
+                    cidadeObj.removeChild(cidadeObj.firstChild);
+                }
+                cidadeObj.options[cidadeObj.options.length] = new Option('Selecione uma cidade', '');
 
-            event.target.parentNode.insertBefore(grupoNovo, event.target);
-        });
+                event.target.parentNode.insertBefore(grupoNovo, event.target);
+            });
+        })();
     </script>
 
 </body>
