@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Cartório Digital</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+  <h1>Cartório Digital</h1>
+
+  <!-- Abas -->
+  <div class="tabs">
+    <button type="button" class="tab active" data-tipo="nascimento" onclick="trocarAba('nascimento')">Nascimento</button>
+    <button type="button" class="tab" data-tipo="casamento" onclick="trocarAba('casamento')">Casamento</button>
+    <button type="button" class="tab" data-tipo="obito" onclick="trocarAba('obito')">Óbito</button>
+  </div>
+
+  <!-- Formulário -->
+  <form id="form" onsubmit="salvar(event)">
+    <div id="nascimento" class="campos">
+      <input type="text" placeholder="Nome completo" required>
+      <input type="text" placeholder="Mãe" required>
+      <input type="text" placeholder="Pai" required>
+      <input type="date" required>
+      <input type="text" placeholder="Cidade" required>
+      <input type="text" placeholder="Hospital" required>
+      <input type="text" placeholder="Nº registro" required>
+    </div>
+
+    <div id="casamento" class="campos" style="display:none">
+      <input type="text" placeholder="Cônjuge 1" required>
+      <input type="text" placeholder="Cônjuge 2" required>
+      <input type="date" required>
+      <input type="text" placeholder="Regime de bens" required>
+      <input type="text" placeholder="Local" required>
+      <input type="text" placeholder="Celebrante" required>
+      <input type="text" placeholder="Nº registro" required>
+    </div>
+
+    <div id="obito" class="campos" style="display:none">
+      <input type="text" placeholder="Nome do falecido" required>
+      <input type="date" required>
+      <input type="text" placeholder="Local" required>
+      <input type="text" placeholder="Causa" required>
+      <input type="text" placeholder="Declarante" required>
+      <input type="text" placeholder="Parentesco" required>
+      <input type="text" placeholder="Nº registro" required>
+    </div>
+
+    <div class="botoes">
+      <button type="submit" class="salvar">Salvar</button>
+      <button type="button" class="limpar" onclick="limparForm()">Limpar</button>
+    </div>
+  </form>
+
+  <!-- Tabela -->
+  <div class="tabela">
+    <table>
+      <thead>
+        <tr>
+          <th>Tipo</th>
+          <th>Resumo</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody id="lista"></tbody>
+    </table>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
