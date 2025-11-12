@@ -20,7 +20,8 @@
     font-family: Inter, Arial, sans-serif;
 }
 
-html,body {
+html,
+body {
     height: 100%;
 }
 
@@ -34,7 +35,8 @@ body {
     padding-bottom: calc(var(--footer-h) + 20px);
 }
 
-.site-header, .site-footer {
+.site-header,
+.site-footer {
     position: fixed;
     left: 0;
     right: 0;
@@ -57,7 +59,7 @@ body {
     height: var(--footer-h);
     align-items: center;
     background: linear-gradient(90deg, #09000e 0%, #07000e 100%) !important;
-    border-top: 1px solid rgba(77,22,94,0.06) !important;
+    border-top: 1px solid rgba(77, 22, 94, 0.06) !important;
 }
 
 .app {
@@ -173,7 +175,8 @@ body {
     transition: transform .12s ease, filter .12s ease, background .12s;
 }
 
-.tab.active, .tab:hover {
+.tab.active,
+.tab:hover {
     background: var(--verde);
     transform: translateY(-2px);
 }
@@ -185,7 +188,9 @@ body {
     justify-content: center;
 }
 
-.salvar, .limpar, .acao {
+.salvar,
+.limpar,
+.acao {
     padding: 12px 18px;
     border: none;
     border-radius: 10px;
@@ -322,30 +327,32 @@ body {
 
 /* Aqui, eu fiz as cores diferentes na tabela */
 .lista-registros tbody tr.nascimento {
-  background: linear-gradient(90deg, rgba(74,124,89,0.06), rgba(74,124,89,0.02));
-  border-left: 6px solid rgba(74,124,89,0.9);
+    background: linear-gradient(90deg, rgba(74, 124, 89, 0.06), rgba(74, 124, 89, 0.02));
+    border-left: 6px solid rgba(74, 124, 89, 0.9);
 }
+
 .lista-registros tbody tr.casamento {
-  background: linear-gradient(90deg, rgba(158,160,75,0.06), rgba(158,160,75,0.02));
-  border-left: 6px solid rgba(158,160,75,0.9);
+    background: linear-gradient(90deg, rgba(158, 160, 75, 0.06), rgba(158, 160, 75, 0.02));
+    border-left: 6px solid rgba(158, 160, 75, 0.9);
 }
+
 .lista-registros tbody tr.obito {
-  background: linear-gradient(90deg, rgba(196,58,58,0.06), rgba(196,58,58,0.02));
-  border-left: 6px solid rgba(196,58,58,0.9);
+    background: linear-gradient(90deg, rgba(196, 58, 58, 0.06), rgba(196, 58, 58, 0.02));
+    border-left: 6px solid rgba(196, 58, 58, 0.9);
 }
 
 .lista-registros tbody tr.nascimento:hover,
 .lista-registros tbody tr.casamento:hover,
 .lista-registros tbody tr.obito:hover {
-  transform: translateY(-4px);
-  background: linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+    transform: translateY(-4px);
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
 }
 
 .lista-registros tbody tr.nascimento td:first-child,
 .lista-registros tbody tr.casamento td:first-child,
 .lista-registros tbody tr.obito td:first-child {
-  font-weight: 800;
-  color: var(--text);
+    font-weight: 800;
+    color: var(--text);
 }
 
 @media (max-width: 720px) {
@@ -373,5 +380,70 @@ body {
     .acao {
         width: 100%;
     }
+
+    .grupo_estado_cidade {
+        border-bottom: 1px solid #07000e;
+        padding: 2rem 0;
+    }
+
+    #add {
+        margin-top: 20px;
+    }
+
+    button,
+    select {
+        font-size: 1rem;
+    }
 }
-/* Nunca mais faço tanto css, pqp(e ainda ficou feio). Cansei, #VEMFÉRIAS*/
+
+/* aqui é pros Estados e Cidades */
+.grupo_estado_cidade {
+  display: flex;
+  gap: 12px;
+  margin: 12px 0;
+  align-items: flex-start;
+}
+
+.grupo_estado_cidade select,
+.grupo_estado_cidade input {
+  flex: 1;
+  padding: 14px 16px;
+  background: #232626;
+  border: 1px solid rgba(255,255,255,0.03);
+  color: var(--text);
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.grupo_estado_cidade select::placeholder,
+.grupo_estado_cidade input::placeholder {
+  color: var(--muted);
+}
+
+.grupo_estado_cidade select:focus,
+.grupo_estado_cidade input:focus {
+  outline: 2px solid var(--verde);
+  transform: translateY(-1px);
+}
+#add {
+  padding: 12px 16px;
+  background: linear-gradient(180deg, var(--verde), #3d6748);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform .12s ease, box-shadow .12s ease;
+  margin-top: 8px;
+}
+
+#add:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(58,96,70,0.28);
+}
+
+#add:focus {
+  outline: 2px solid var(--bege);
+}
+
+/*um pouco usei da ia pra ajudar (pq ninguém é de ferro), mas tá ai essa coisa de doido*/
