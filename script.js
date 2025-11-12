@@ -77,7 +77,6 @@
     registros.forEach(r => {
       const tr = document.createElement('tr');
 
-      // marca a linha com o tipo (nascimento / casamento / obito)
       if (r.tipo) tr.classList.add(r.tipo);
 
       const tdTipo = document.createElement('td');
@@ -132,7 +131,6 @@
     render();
   }
 
-  // handlers
   function onSave(e) {
     if (e && e.preventDefault) e.preventDefault();
     const inputs = getVisibleInputs();
@@ -152,17 +150,14 @@
   }
 
   function init() {
-    // attach tab clicks
     qsa('.tab').forEach(t => t.addEventListener('click', () => setActiveTab(t.dataset.tipo)));
 
-    // save/clear
     const form = qs('#form');
     if (form) form.addEventListener('submit', onSave);
     const btnSave = qs('.salvar');
     if (btnSave) btnSave.addEventListener('click', onSave);
     qsa('.limpar').forEach(b => b.addEventListener('click', clearForm));
 
-    // ensure a tab is active
     const active = qs('.tab.active') || qs('.tab');
     if (active && active.dataset && active.dataset.tipo) setActiveTab(active.dataset.tipo);
 

@@ -75,7 +75,6 @@ body {
     width: 100%;
     max-width: 1100px;
     padding: 0 18px;
-    /* centralizado */
     margin: 0 auto;
     text-align: center;
     display: flex;
@@ -88,7 +87,6 @@ body {
     color: var(--bege);
     font-size: 1.6rem;
     margin-bottom: 4px;
-    /* garantir centralização */
     text-align: center;
 }
 
@@ -101,7 +99,6 @@ body {
     width: 100%;
     max-width: 1100px;
     padding: 0 18px;
-    /* centralizado */
     margin: 0 auto;
     text-align: center;
     display: flex;
@@ -323,7 +320,7 @@ body {
     overflow: hidden;
 }
 
-/* cores por tipo de registro na tabela */
+/* Aqui, eu fiz as cores diferentes na tabela */
 .lista-registros tbody tr.nascimento {
   background: linear-gradient(90deg, rgba(74,124,89,0.06), rgba(74,124,89,0.02));
   border-left: 6px solid rgba(74,124,89,0.9);
@@ -337,7 +334,6 @@ body {
   border-left: 6px solid rgba(196,58,58,0.9);
 }
 
-/* hover mantém destaque mas preserva cor do tipo */
 .lista-registros tbody tr.nascimento:hover,
 .lista-registros tbody tr.casamento:hover,
 .lista-registros tbody tr.obito:hover {
@@ -345,7 +341,6 @@ body {
   background: linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
 }
 
-/* ajusta primeira coluna para contraste com a borda */
 .lista-registros tbody tr.nascimento td:first-child,
 .lista-registros tbody tr.casamento td:first-child,
 .lista-registros tbody tr.obito td:first-child {
@@ -379,3 +374,4 @@ body {
         width: 100%;
     }
 }
+/* Nunca mais faço tanto css, pqp(e ainda ficou feio). Cansei, #VEMFÉRIAS*/
