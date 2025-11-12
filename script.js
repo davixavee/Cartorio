@@ -88,12 +88,12 @@
       const tdTipo = document.createElement("td");
       tdTipo.textContent =
         (r.tipo || "").charAt(0).toUpperCase() + (r.tipo || "").slice(1);
-      
+
       const tdResumo = document.createElement("td");
       tdResumo.textContent =
         (r.dados || []).slice(0, 4).join(" | ") +
         (r.dados && r.dados.length > 4 ? "..." : "");
-      
+
       const tdAcoes = document.createElement("td");
       tdAcoes.className = "acoes";
 

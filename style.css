@@ -398,52 +398,53 @@ body {
 
 /* aqui é pros Estados e Cidades */
 .grupo_estado_cidade {
-  display: flex;
-  gap: 12px;
-  margin: 12px 0;
-  align-items: flex-start;
+    display: flex;
+    gap: 12px;
+    margin: 12px 0;
+    align-items: flex-start;
 }
 
 .grupo_estado_cidade select,
 .grupo_estado_cidade input {
-  flex: 1;
-  padding: 14px 16px;
-  background: #232626;
-  border: 1px solid rgba(255,255,255,0.03);
-  color: var(--text);
-  border-radius: 8px;
-  font-size: 1rem;
+    flex: 1;
+    padding: 14px 16px;
+    background: #232626;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    color: var(--text);
+    border-radius: 8px;
+    font-size: 1rem;
 }
 
 .grupo_estado_cidade select::placeholder,
 .grupo_estado_cidade input::placeholder {
-  color: var(--muted);
+    color: var(--muted);
 }
 
 .grupo_estado_cidade select:focus,
 .grupo_estado_cidade input:focus {
-  outline: 2px solid var(--verde);
-  transform: translateY(-1px);
+    outline: 2px solid var(--verde);
+    transform: translateY(-1px);
 }
+
 #add {
-  padding: 12px 16px;
-  background: linear-gradient(180deg, var(--verde), #3d6748);
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: transform .12s ease, box-shadow .12s ease;
-  margin-top: 8px;
+    padding: 12px 16px;
+    background: linear-gradient(180deg, var(--verde), #3d6748);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform .12s ease, box-shadow .12s ease;
+    margin-top: 8px;
 }
 
 #add:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(58,96,70,0.28);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(58, 96, 70, 0.28);
 }
 
 #add:focus {
-  outline: 2px solid var(--bege);
+    outline: 2px solid var(--bege);
 }
 
 /*um pouco usei da ia pra ajudar (pq ninguém é de ferro), mas tá ai essa coisa de doido*/
