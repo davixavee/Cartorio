@@ -1,75 +1,98 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Cartório Digital</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Cartório digital de Ybyan</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<div class="app">
-  <h1>Cartório Digital</h1>
 
-  <!-- Abas -->
-  <div class="tabs">
-    <button type="button" class="tab active" data-tipo="nascimento" onclick="trocarAba('nascimento')">Nascimento</button>
-    <button type="button" class="tab" data-tipo="casamento" onclick="trocarAba('casamento')">Casamento</button>
-    <button type="button" class="tab" data-tipo="obito" onclick="trocarAba('obito')">Óbito</button>
-  </div>
+    <header class="site-header card" role="banner">
+        <div class="header-inner">
+            <h1>Cartório Digital de Ybyan</h1>
+            <p class="subtitle">Gerencie registros de nascimento, casamento e óbito!</p>
+        </div>
+    </header>
 
-  <!-- Formulário -->
-  <form id="form" onsubmit="salvar(event)">
-    <div id="nascimento" class="campos">
-      <input type="text" placeholder="Nome completo" required>
-      <input type="text" placeholder="Mãe" required>
-      <input type="text" placeholder="Pai" required>
-      <input type="date" required>
-      <input type="text" placeholder="Cidade" required>
-      <input type="text" placeholder="Hospital" required>
-      <input type="text" placeholder="Nº registro" required>
+
+    <div class="app">
+        <div class="conteudo">
+            <!--aqui é o Registro -->
+            <main class="registro card">
+                <form id="form">
+                    <div class="tabs" role="tablist" aria-label="Tipos de registro">
+                        <button type="button" class="tab active" data-tipo="nascimento">Nascimento</button>
+                        <button type="button" class="tab" data-tipo="casamento">Casamento</button>
+                        <button type="button" class="tab" data-tipo="obito">Óbito</button>
+                    </div>
+
+                    <div id="nascimento" class="campos" aria-hidden="false">
+                        <input name="nome" type="text" placeholder="Nome completo" required>
+                        <input name="mae" type="text" placeholder="Mãe" required>
+                        <input name="pai" type="text" placeholder="Pai" required>
+                        <input name="data" type="date" required>
+                        <input name="cidade" type="text" placeholder="Cidade" required>
+                        <input name="hospital" type="text" placeholder="Hospital" required>
+                        <input name="registro" type="text" placeholder="Nº registro" required>
+                    </div>
+
+                    <div id="casamento" class="campos" style="display:none" aria-hidden="true">
+                        <input name="conjuge1" type="text" placeholder="Cônjuge 1" required>
+                        <input name="conjuge2" type="text" placeholder="Cônjuge 2" required>
+                        <input name="data" type="date" required>
+                        <input name="regime" type="text" placeholder="Regime de bens" required>
+                        <input name="local" type="text" placeholder="Local" required>
+                        <input name="celebrante" type="text" placeholder="Celebrante" required>
+                        <input name="registro" type="text" placeholder="Nº registro" required>
+                    </div>
+
+                    <div id="obito" class="campos" style="display:none" aria-hidden="true">
+                        <input name="nome" type="text" placeholder="Nome do falecido" required>
+                        <input name="data" type="date" required>
+                        <input name="local" type="text" placeholder="Local" required>
+                        <input name="causa" type="text" placeholder="Causa" required>
+                        <input name="declarante" type="text" placeholder="Declarante" required>
+                        <input name="parentesco" type="text" placeholder="Parentesco" required>
+                        <input name="registro" type="text" placeholder="Nº registro" required>
+                    </div>
+
+                    <div class="botoes">
+                        <button type="submit" class="salvar">Salvar</button>
+                        <button type="button" class="limpar">Limpar</button>
+                    </div>
+                </form>
+            </main>
+
+            <!-- Tabela :) -->
+            <section class="lista-registros card" aria-live="polite">
+                <table>
+                    <caption class="sr-only">Registros salvos</caption>
+                    <thead>
+                        <tr>
+                            <th>Tipo</th>
+                            <th>Resumo</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="lista"></tbody>
+                </table>
+                <div class="nota">Clique em editar na linha ou no botão "Editar" para carregar o registro.</div>
+            </section>
+        </div>
     </div>
 
-    <div id="casamento" class="campos" style="display:none">
-      <input type="text" placeholder="Cônjuge 1" required>
-      <input type="text" placeholder="Cônjuge 2" required>
-      <input type="date" required>
-      <input type="text" placeholder="Regime de bens" required>
-      <input type="text" placeholder="Local" required>
-      <input type="text" placeholder="Celebrante" required>
-      <input type="text" placeholder="Nº registro" required>
-    </div>
+    <!-- Roda os pé -->
+    <footer class="site-footer card" role="contentinfo">
+        <div class="footer-inner">
+            <small>© Cartório digital de Ybyan — Eu que fiz, XD</small>
+        </div>
+    </footer>
 
-    <div id="obito" class="campos" style="display:none">
-      <input type="text" placeholder="Nome do falecido" required>
-      <input type="date" required>
-      <input type="text" placeholder="Local" required>
-      <input type="text" placeholder="Causa" required>
-      <input type="text" placeholder="Declarante" required>
-      <input type="text" placeholder="Parentesco" required>
-      <input type="text" placeholder="Nº registro" required>
-    </div>
-
-    <div class="botoes">
-      <button type="submit" class="salvar">Salvar</button>
-      <button type="button" class="limpar" onclick="limparForm()">Limpar</button>
-    </div>
-  </form>
-
-  <!-- Tabela -->
-  <div class="tabela">
-    <table>
-      <thead>
-        <tr>
-          <th>Tipo</th>
-          <th>Resumo</th>
-          <th>Ações</th>
-        </tr>
-      </thead>
-      <tbody id="lista"></tbody>
-    </table>
-  </div>
-</div>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>
