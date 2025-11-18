@@ -1,0 +1,1 @@
+é, eu tentei fazer um site legal, um pouco a ia me ajudou, mas tá ai, muito suor, choro, risos, desespero, mas tá aqui, de pé na patrola, mais firme que palanque em banhado, mais firme q prego em polenta;
